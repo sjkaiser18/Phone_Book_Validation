@@ -22,6 +22,6 @@ int main(int argc, char* argv[]) {
     }
 
     nv.checkTheName("Hello");
-    pv.checkTheNumber("12-345");
+    pv.checkTheNumber("12-34567");
     return 0;
 }

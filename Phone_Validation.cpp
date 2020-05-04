@@ -21,13 +21,16 @@ void Phone_Validation::checkTheNumber(std::string num) {
     }
 
     int j=0;
-    while(j<length){
+    int nums_left=0;
+    bool dash=false;
+    while(j<length && nums_left<4){
+        if(dash){nums_left++;}
         std::size_t found=whitelist.find(phone_num[j]);
         if(isdigit(phone_num[j])){
             pieced_down_num.push_back(phone_num[j]);
         }
-        //std::size_t found=whitelist.find(phone_num[j]);
         else if(found!=std::string::npos){
+            if(found==4){dash=true;}
             pieced_down_num.push_back(phone_num[j]);
         }
         else{

@@ -12,7 +12,6 @@ class Name_Validation {
     public:
     void checkTheName(std::string name);
     std::string whitelist="+()'-., ";
-    //char whitelist[7]={'+', '(', ')', '-','.',' '};
 };
 
 
