@@ -37,7 +37,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.15.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.15.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.15.3/CMakeSystem.cmake"
-  "../invalid_list.txt"
   "../valid_list.txt"
   )
 
@@ -50,7 +49,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "valid_list.txt"
-  "invalid_list.txt"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
