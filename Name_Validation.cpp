@@ -3,9 +3,8 @@
 //
 
 #include "Name_Validation.h"
-std::string Name_Validation::checkTheName(std::string name) {
+std::string Name_Validation::checkTheName(std::string name,std::regex good) {
     //convert the string to a set of chars
-    bool valid=0;
     int length=name.length();
     char name_array[length];
 
@@ -14,9 +13,12 @@ std::string Name_Validation::checkTheName(std::string name) {
     for(int i=0;i<length;i++){
         name_array[i]=name[i];
     }
-    int j=0;
 
+    int j=0;
     //maybe instead of skipping we delete that value from the character array and smush it back into a string in the end
+
+
+
     while(j<length){
         std::size_t found=whitelist.find(name_array[j]);
         if(isalpha(name_array[j])){

@@ -12,7 +12,7 @@
 
 class Name_Validation {
     public:
-    std::string checkTheName(std::string name);
+    std::string checkTheName(std::string name,std::regex good);
     std::string whitelist="+()'-., ";
 };
 

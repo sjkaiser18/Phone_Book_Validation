@@ -12,8 +12,8 @@ int main(int argc, char* argv[]) {
     std::ifstream inputFile;
     inputFile.open(argv[1]);
     std::regex reg ("([0-9]+)");
-    std::regex good("([A-Z][a-z]+");
-    
+    std::regex good("([A-Za-z]+)");
+
     if(inputFile.is_open()){
         std::cout<<"File was opened"<<std::endl;
         while(inputFile.good()) {
@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
                 std::string name;
                 std::string num;
                 inputFile>>name>>num;
-                std::string curr_name = nv.checkTheName(name);
+                std::string curr_name = nv.checkTheName(name,good);
                 std::string numba = pv.checkTheNumber(num, reg);
                 listings.push_back(make_pair(curr_name, numba));
             }
