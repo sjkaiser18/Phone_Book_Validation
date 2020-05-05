@@ -16,8 +16,7 @@ int main(int argc, char* argv[]) {
     std::regex good("([A-Z][']?[A-Za-z]+[.]?[-]?([A-Z][']?[A-Za-z]+[.]?)?[\\s]?[']?([A-Z][']?[A-Za-z]+[.]?)?[-]?([A-Z][']?[A-Za-z]+[.]?)?[']?([,]?[\\s]?[A-Z][']?[A-Za-z]+[.]?)?[-]?([A-Z][']?[A-Za-z]+[.]?)?([,]?[\\s]?[A-Z][']?[A-Za-z]+[.]?[-]?([A-Z][']?[A-Za-z]+[.]?)?)?)");
 
     std::ifstream inputFile;
-    for(int q=1;q<value;q++) {
-        inputFile.open(argv[q]);
+        inputFile.open(argv[1]);
         if (inputFile.is_open()) {
             while (inputFile.good()) {
 
@@ -78,6 +77,5 @@ int main(int argc, char* argv[]) {
         else {
             std::cout << "File was not opened, please check args" << std::endl;
         }//end of if file is not open
-    }
     return 0;
 }
