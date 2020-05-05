@@ -81,5 +81,6 @@ int main(int argc, char* argv[]) {
     else{
         std::cout<<"File was not opened, please check args"<<std::endl;
     }//end of if file is not open
+    inputFile.close();
     return 0;
 }
