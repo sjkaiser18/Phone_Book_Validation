@@ -23,5 +23,11 @@
          std::cout << match_str << '\n';
      }
 
-    return num; //turn this into the actual # post trimming
+     if(std::distance(words_begin, words_end)>0){
+         return num;
+     }
+     else{
+         std::string nothing;
+         return nothing;
+     }
 }

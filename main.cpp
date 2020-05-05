@@ -8,9 +8,10 @@ int main(int argc, char* argv[]) {
     std::vector<std::pair<std::string,std::string>> listings;
     Phone_Validation pv;
     Name_Validation nv;
-    //the problem is getline only accepts stuff with nno spaces, so I'll put them in brackets or something so i can still use spaces
-    std::regex reg ("([(]?[0-9]{3}[)]?[-]?([0-9]{3})?[-]?[0-9]{4})");
-    std::regex good("([A-Z][A-Za-z']+[-]?([A-Z][A-Za-z']+)?([,][A-Z][A-Za-z']+[-]?([A-Z][A-Za-z']+)?)?)");
+
+    //need to adjust count for incorrect inputs too
+    std::regex reg ("([(]?[0-9]{3}[)]?[-\\s]?([0-9]{3})?[-\\s]?[0-9]{4})");
+    std::regex good("([A-Z][A-Za-z'.]+[-]?([A-Z][A-Za-z'.]+)?([,\\s][A-Z][A-Za-z'.]+[-]?([A-Z][A-Za-z'.]+)?)?)");
 
     std::ifstream inputFile;
     inputFile.open(argv[1]);
@@ -24,12 +25,26 @@ int main(int argc, char* argv[]) {
             inputFile>>control;
 
             if(std::strncmp(control,"ADD",3)==0) {
+                std::string dummy;
                 std::string name;
                 std::string num;
-                inputFile>>name>>num;
+                getline(inputFile,dummy,'<');
+                getline(inputFile,name,'>');
+                getline(inputFile,dummy,'<');
+                getline(inputFile,num,'>');
                 std::string curr_name = nv.checkTheName(name,good);
                 std::string numba = pv.checkTheNumber(num, reg);
-                listings.push_back(make_pair(curr_name, numba));
+
+                if(curr_name==name && numba==num) {
+                    listings.push_back(make_pair(curr_name, numba));
+                }
+
+                else if(curr_name!=name){
+                    std::cout<<"Name is invalid, please fix before continuing"<<std::endl;
+                }
+                else if(numba!=num){
+                    std::cout<<"Phone Number is invalid,please fix before continuing"<<std::endl;
+                }
             }//end of if choice=ADD
 
             if(std::strncmp(control,"LIST",4)==0) {

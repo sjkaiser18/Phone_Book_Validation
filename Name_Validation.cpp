@@ -19,5 +19,12 @@ std::string Name_Validation::checkTheName(std::string name,std::regex good) {
         std::cout << match_str << '\n';
     }
 
-    return name;
+    if(std::distance(words_begin, words_end)>0){
+        return name;
+    }
+    else{
+        std::string nothing;
+        return nothing;
+    }
+
 }
