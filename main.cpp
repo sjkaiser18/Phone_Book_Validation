@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
     Name_Validation nv;
 
     //need to adjust count for incorrect inputs too
-    std::regex reg ("([+]?[0-9]?[0-9]?[0-9]?[\\s]?[(]?[0-9]{3}[)]?[-\\s]?([0-9]{3})?[-\\s]?[0-9]{4})");
+    std::regex reg ("([+]?[1-9][0-9]?[0-9]?[\\s]?[(]?[1-9][0-9][0-9]?[)]?[-\\s]?([0-9]{3})?[-\\s]?[0-9]{4})");
     std::regex good("([A-Z][']?[A-Za-z]+[.]?[-]?([A-Z][']?[A-Za-z]+[.]?)?([,]?[\\s][A-Z][']?[A-Za-z]+[.]?)?([,]?[\\s][A-Z][']?[A-Za-z]+[.]?[-]?([A-Z][']?[A-Za-z]+[.]?)?)?)");
 
     std::ifstream inputFile;
