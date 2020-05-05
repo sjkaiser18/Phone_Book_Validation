@@ -9,28 +9,19 @@
     //if domestic, 10 digits and perhaps parentheses and dashes (123)456-7890
     //if international, (for US) +1 and 10 digits with perhaps dashes
 
-    int c=9;
-    bool valid=0;
-    int length =num.length();
-    char phone_num[length];
+     auto words_begin =
+             std::sregex_iterator(num.begin(), num.end(), reg);
+     auto words_end = std::sregex_iterator();
 
-    std::vector<char> pieced_down_num;
-    for(int i=0;i<length;i++){
-        phone_num[i]=num[i];
-    }
+     std::cout << "Found "
+               << std::distance(words_begin, words_end)
+               << " words:\n";
 
-
-    int j=0;
-    int nums_left=0;
-    bool dash=false;
-
-    std::sregex_iterator currentMatch(num.begin(),num.end(),reg);
-    std::sregex_iterator lastMatch;
-    while(currentMatch!=lastMatch){
-        std::smatch match = *currentMatch;
-        std::cout <<match.str()<<std::endl;
-        currentMatch++;
-    }
+     for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
+         std::smatch match = *i;
+         std::string match_str = match.str();
+         std::cout << match_str << '\n';
+     }
 
     return num; //turn this into the actual # post trimming
 }
