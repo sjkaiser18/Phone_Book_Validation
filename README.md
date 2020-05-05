@@ -2,7 +2,10 @@
 This program is a Phone Book Listinng, where a user inputs their name and phone number. There are certain restrictions on what is considered a valid or invalid name or number. If the user's number is invalid, it will not be added to the list and the user will be asked to replace the incorrect value. 
 
 #Compilation
-For this program, I created the program in CLion and tested using Github actions; however, these should not be required for compiling.
+For this program, I created the program in CLion and tested using Github actions; however, these should not be required for compiling. 
+
+To compile the program, either open the program folder in your preferred compiler, using either valid_list.txt or invalid_list.txt as your command line argument (highly preferred method), or open your Terminal, navigate to the folder and type: </br>g++ -c main.cpp </br>g++ -c Phone_Validation.cpp</br> g++ -c Name_Validation.cpp</br>g++ -o Phone_Book Name_Validation.o Phone_Validation.o main.o
+</br>./Phone_Book valid_list.txt or ./Phone_Book invalid_list.txt
 
 | Valid Inputs for Name                       | Invalid Inputs for Name                                       | Valid Inputs for Phone # | Invalid Inputs for Phone #                       |
 |---------------------------------------------|---------------------------------------------------------------|--------------------------|--------------------------------------------------|
