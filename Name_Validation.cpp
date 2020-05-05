@@ -3,7 +3,7 @@
 //
 
 #include "Name_Validation.h"
-void Name_Validation::checkTheName(std::string name) {
+std::string Name_Validation::checkTheName(std::string name) {
     //convert the string to a set of chars
     bool valid=0;
     int length=name.length();
@@ -16,6 +16,7 @@ void Name_Validation::checkTheName(std::string name) {
     }
     int j=0;
 
+    //maybe instead of skipping we delete that value from the character array and smush it back into a string in the end
     while(j<length){
         std::size_t found=whitelist.find(name_array[j]);
         if(isalpha(name_array[j])){
@@ -30,10 +31,5 @@ void Name_Validation::checkTheName(std::string name) {
         j++;
     }
 
-    for(int m=0;m<pieced_down_name.size();m++){
-        std::cout<<pieced_down_name.at(m);
-    }
-
-    std::cout<<std::endl;
-
+    return name;
 }

@@ -7,10 +7,12 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <regex>
+
 
 class Name_Validation {
     public:
-    void checkTheName(std::string name);
+    std::string checkTheName(std::string name);
     std::string whitelist="+()'-., ";
 };
 

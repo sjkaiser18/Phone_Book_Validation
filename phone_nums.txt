@@ -1,6 +1,5 @@
-Bruce Schneier
-Schneier, Bruce
-Schneier, Bruce Wayne
-O’Malley, John F.
-John O’Malley-Smith
-Cher
+ADD Bruce 1234567
+ADD Nicholas 3333333
+LIST
+DEL Nicholas
+LIST

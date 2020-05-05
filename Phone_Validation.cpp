@@ -3,8 +3,7 @@
 //
 
 #include "Phone_Validation.h"
-
-void Phone_Validation::checkTheNumber(std::string num) {
+ std::string Phone_Validation::checkTheNumber(std::string num,std::regex reg) {
     //all may have spaces
     //if local, 7 digits and perhaps a dash 123-4567
     //if domestic, 10 digits and perhaps parentheses and dashes (123)456-7890
@@ -20,27 +19,18 @@ void Phone_Validation::checkTheNumber(std::string num) {
         phone_num[i]=num[i];
     }
 
+
     int j=0;
     int nums_left=0;
     bool dash=false;
-    while(j<length && nums_left<4){
-        if(dash){nums_left++;}
-        std::size_t found=whitelist.find(phone_num[j]);
-        if(isdigit(phone_num[j])){
-            pieced_down_num.push_back(phone_num[j]);
-        }
-        else if(found!=std::string::npos){
-            if(found==4){dash=true;}
-            pieced_down_num.push_back(phone_num[j]);
-        }
-        else{
-            std::cout<<"idk";
-        }
-        j++;
-    }
-    for(int m=0;m<pieced_down_num.size();m++){
-        std::cout<<pieced_down_num.at(m);
+
+    std::sregex_iterator currentMatch(num.begin(),num.end(),reg);
+    std::sregex_iterator lastMatch;
+    while(currentMatch!=lastMatch){
+        std::smatch match = *currentMatch;
+        std::cout <<match.str()<<std::endl;
+        currentMatch++;
     }
 
-    std::cout<<std::endl;
+    return num; //turn this into the actual # post trimming
 }
