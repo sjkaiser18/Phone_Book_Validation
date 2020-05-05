@@ -5,7 +5,6 @@
 #include "Phone_Validation.h"
 #include "Name_Validation.h"
 int main(int argc, char* argv[]) {
-    int value=argc;
 
     std::vector<std::pair<std::string,std::string>> listings;
     Phone_Validation pv;
