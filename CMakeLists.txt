@@ -11,8 +11,8 @@ set (EXE_NAME Phone)
 #   set (input02 "train_target.csv")
 # etc....
 
-set (input01 "phone_nums.txt")
-#set (input02 "inputs/p3-input.txt")
+set (input01 "valid_list.txt")
+set (input02 "invalid_list.txt")
 
 
 ##########################################

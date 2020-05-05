@@ -1,0 +1,12 @@
+INVALID NAMES AND NUMBERS
+ADD <> <333333>
+ADD <b> <33-3333>
+ADD <S> <033-333-3333>
+ADD <Sarah O''Reily> <3 333 3333>
+ADD <Sarah, Janene,, Kaiser> <(0) 633 3333>
+ADD <James,Bond> <(01 )6333333>
+ADD <Bond, James> <(10)6333333>
+ADD <Sarah 'Ska'' Janene Kaiser> <+1333333>
+ADD <333> <+01(480)6333333>
+ADD <<script>x> <+1234(480)6333333>
+LIST

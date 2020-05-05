@@ -98,7 +98,10 @@
 		<Unit filename="/Users/sarahkaiser/Desktop/Phone/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/sarahkaiser/Desktop/Phone/phone_nums.txt">
+		<Unit filename="/Users/sarahkaiser/Desktop/Phone/invalid_list.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/sarahkaiser/Desktop/Phone/valid_list.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

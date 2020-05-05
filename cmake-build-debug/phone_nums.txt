@@ -1,2 +1,13 @@
-ADD <Sarah-Ann 'Mad-Max' Jane-Clark Kurz-Kaiser> <(480)6333333>
+VALID NAMES
+ADD <Sarah> <(480)6333333>
+ADD <Sarah Kaiser> <(480)6333333>
+ADD <Sarah Janene Kaiser> <(480)6333333>
+ADD <Sarah,Janene,Kaiser> <(480)6333333>
+ADD <Sarah, Janene, Kaiser> <(480)6333333>
+ADD <James,Bond> <(480)6333333>
+ADD <Bond, James> <(480)6333333>
+ADD <Sarah 'Ska' Janene Kaiser> <(480)6333333>
+ADD <Sarah Mary-Jane Kaiser> <(480)6333333>
+ADD <Ryan-Cole Weldon-Carrol> <(480)6333333>
+ADD <Sean-Clark 'Patty' Davis-John McDonald-O'Sean> <(480)6333333>
 LIST
