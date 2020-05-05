@@ -12,7 +12,7 @@ set (EXE_NAME Phone)
 # etc....
 
 set (input01 "valid_list.txt")
-#set (input02 "invalid_list.txt")
+#set (input02 "inputs/p3-input.txt")
 
 
 ##########################################
