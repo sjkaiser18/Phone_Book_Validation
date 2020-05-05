@@ -1,6 +1,6 @@
 # Phone_Book_Validation
 
-Github Repository can be found [here](https://github.com/sjkaiser18/Phone_Book_Validation) </br>
+Github Repository can be found at https://github.com/sjkaiser18/Phone_Book_Validation </br>
 This program is a Phone Book Listing, where a user inputs their name and phone number. There are certain restrictions on what is considered a valid or invalid name or number. If the user's number is invalid, it will not be added to the list and the user will be asked to replace the incorrect value. 
 
 #Compilation
