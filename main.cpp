@@ -10,8 +10,8 @@ int main(int argc, char* argv[]) {
     Name_Validation nv;
 
     //need to adjust count for incorrect inputs too
-    std::regex reg ("([+]?[1-9][0-9]?[0-9]?[\\s]?[(]?[1-9][0-9][0-9]?[)]?[-\\s]?([0-9]{3})?[-\\s]?[0-9]{4})");
-    std::regex good("([A-Z][']?[A-Za-z]+[.]?[-]?([A-Z][']?[A-Za-z]+[.]?)?([,]?[\\s][A-Z][']?[A-Za-z]+[.]?)?([,]?[\\s][A-Z][']?[A-Za-z]+[.]?[-]?([A-Z][']?[A-Za-z]+[.]?)?)?)");
+    std::regex reg ("(([+]?[1-9][0-9]?[0-9]?)?[\\s]?[(]?[1-9][0-9][0-9][)]?[-\\s]?([0-9]{3})?[-\\s]?[0-9]{4})");
+    std::regex good("([A-Z][']?[A-Za-z]+[.]?[-]?([A-Z][']?[A-Za-z]+[.]?)?[\\s]?[']?([A-Z][']?[A-Za-z]+[.]?)?[-]?([A-Z][']?[A-Za-z]+[.]?)?[']?([,]?[\\s]?[A-Z][']?[A-Za-z]+[.]?)?[-]?([A-Z][']?[A-Za-z]+[.]?)?([,]?[\\s]?[A-Z][']?[A-Za-z]+[.]?[-]?([A-Z][']?[A-Za-z]+[.]?)?)?)");
 
     std::ifstream inputFile;
     inputFile.open(argv[1]);
@@ -43,10 +43,10 @@ int main(int argc, char* argv[]) {
                     std::cout<<"Both the name and phone number are invalid,please fix before continuing"<<std::endl;
                 }
 
-                else if(curr_name!=name){
+                else if(curr_name!=name || name.length()==0){
                     std::cout<<"Name is invalid, please fix before continuing"<<std::endl;
                 }
-                else if(numba!=num){
+                else if(numba!=num || name.length()==0){
                     std::cout<<"Phone Number is invalid,please fix before continuing"<<std::endl;
                 }
             }//end of if choice=ADD
@@ -54,6 +54,9 @@ int main(int argc, char* argv[]) {
             if(std::strncmp(control,"LIST",4)==0) {
                 std::cout<<"Contact List:"<<std::endl;
                 std::cout<<"Name:  Number:"<<std::endl;
+                if(listings.size()==0){
+                    std::cout<<"   NONE  "<<std::endl;
+                }
                 for(int i=0;i<listings.size();i++){
                     std::cout<<listings[i].first<<" "<<listings[i].second;
                     std::cout<<std::endl;

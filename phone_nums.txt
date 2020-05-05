@@ -1,2 +1,2 @@
-ADD <Sean Marc O'Donald-Murphy> <(703) 123-1234 ext 204>
-LISTgabbi lee
+ADD <Sarah-Ann 'Mad-Max' Jane-Clark Kurz-Kaiser> <6333333>
+LIST
