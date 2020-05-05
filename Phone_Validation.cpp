@@ -8,7 +8,8 @@
     //if local, 7 digits and perhaps a dash 123-4567
     //if domestic, 10 digits and perhaps parentheses and dashes (123)456-7890
     //if international, (for US) +1 and 10 digits with perhaps dashes
-
+     int length=num.length();
+     bool valid=false;
      auto words_begin =
              std::sregex_iterator(num.begin(), num.end(), reg);
      auto words_end = std::sregex_iterator();
@@ -21,9 +22,12 @@
          std::smatch match = *i;
          std::string match_str = match.str();
          std::cout << match_str << '\n';
+         if(match_str.length()==length){
+             valid=true;
+         }
      }
 
-     if(std::distance(words_begin, words_end)>0){
+     if(valid==true){
          return num;
      }
      else{

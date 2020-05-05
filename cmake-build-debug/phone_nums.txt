@@ -1,9 +1,2 @@
-ADD <x> <(703)111-2121>
-ADD <Schneier, Bruce> <12345>
-ADD <Schneier, Bruce Wayne> <(123) 456 7890>
-ADD <O’Malley, John F.> <(123) 456 7890>
-ADD <John O’Malley-Smith> <(123) 456 7890>
-ADD <Cher> <(123) 456 7890>
-LIST
-DEL <Cher>
+ADD <Sean Marc O'Donald-Murphy> <4802165133>
 LIST

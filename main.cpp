@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
 
     //need to adjust count for incorrect inputs too
     std::regex reg ("([(]?[0-9]{3}[)]?[-\\s]?([0-9]{3})?[-\\s]?[0-9]{4})");
-    std::regex good("([A-Z][A-Za-z'.]+[-]?([A-Z][A-Za-z'.]+)?([,\\s][A-Z][A-Za-z'.]+[-]?([A-Z][A-Za-z'.]+)?)?)");
+    std::regex good("([A-Z][']?[A-Za-z]+[.]?[-]?([A-Z][']?[A-Za-z]+[.]?)?([,]?[\\s][A-Z][']?[A-Za-z]+[.]?)?([,]?[\\s][A-Z][']?[A-Za-z]+[.]?[-]?([A-Z][']?[A-Za-z]+[.]?)?)?)");
 
     std::ifstream inputFile;
     inputFile.open(argv[1]);
@@ -35,8 +35,12 @@ int main(int argc, char* argv[]) {
                 std::string curr_name = nv.checkTheName(name,good);
                 std::string numba = pv.checkTheNumber(num, reg);
 
-                if(curr_name==name && numba==num) {
+                if(curr_name==name && numba==num && curr_name.length()!=0 && numba.length()!=0) {
                     listings.push_back(make_pair(curr_name, numba));
+                }
+
+                else if(curr_name!=name && numba!=num){
+                    std::cout<<"Both the name and phone number are invalid,please fix before continuing"<<std::endl;
                 }
 
                 else if(curr_name!=name){
