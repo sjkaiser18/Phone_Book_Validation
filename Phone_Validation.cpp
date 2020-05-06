@@ -10,19 +10,15 @@
     //if international, (for US) +1 and 10 digits with perhaps dashes
      int length=num.length();
      bool valid=false;
-     auto words_begin =
+     auto start =
              std::sregex_iterator(num.begin(), num.end(), reg);
-     auto words_end = std::sregex_iterator();
+     auto stop = std::sregex_iterator();
 
-     std::cout << "Found "
-               << std::distance(words_begin, words_end)
-               << " words:\n";
-
-     for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
+     for (std::sregex_iterator i = start; i != stop; ++i) {
          std::smatch match = *i;
-         std::string match_str = match.str();
-         std::cout << match_str << '\n';
-         if(match_str.length()==length){
+         std::string matched = match.str();
+         std::cout << matched << std::endl;
+         if(matched.length()==length){
              valid=true;
          }
      }
