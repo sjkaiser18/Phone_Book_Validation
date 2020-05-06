@@ -1,6 +1,5 @@
 ADD <Sarah> <3333333>
 ADD <Bond, James> <+1(480)6333333>
-DEL <Bond, James>
 LIST
 ADD <Sarah 'Ska' Janene Kaiser> <+1(480)6333333>
 ADD <Sarah Mary-Jane Kaiser> <(480)6333333>
